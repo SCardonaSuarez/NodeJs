@@ -39,3 +39,31 @@ const getSalario = (id, callback) => {
     salario ? resolve(salario) : reject(`No existe salario con id${id}`);
   });
 };
+
+
+const getInfoUsuario =async ()=> {
+
+  try {
+    const empleado = await getEmpleado(id)
+    const salario = await getSalario(id)
+  
+    return `El salario del empleado: ${empleado} es de ${salario}`
+  } catch (error) {
+
+      throw error
+  }
+
+
+}
+
+
+const id = 12;
+
+getInfoUsuario()
+  .then(msj => console.log(msj))
+  .catch(err => console.log(err))
+
+
+
+
+

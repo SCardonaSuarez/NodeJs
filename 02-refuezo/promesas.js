@@ -65,7 +65,8 @@ const getSalario = (id, callback)=> {
 
 
 
-const id = 2;
+const id = 11;
+
 
 // getEmpleado(id)
 //     .then(empleado => console.log(empleado))
@@ -88,12 +89,21 @@ const id = 2;
 
 //promesas en cadena
 
-let nombre
+let nombre;
 
-getEmpleado(id)
-    .then(empleado =>{
+getEmpleado(id) 
+    .then(empleado => {
         nombre = empleado
         return getSalario(id)
     })
-    .then( salario => console.log(`El empleado ${nombre} tiene un salario de ${salario}`))
+    .then(salario => console.log(`El empleado ${nombre} tiene el salario ${salario}`))
     .catch(err => console.log(err))
+
+
+// getEmpleado(id)
+//     .then(empleado =>{
+//         nombre = empleado
+//         return getSalario(id)
+//     })
+//     .then( salario => console.log(`El empleado ${nombre} tiene un salario de ${salario}`))
+//     .catch(err => console.log(err))
